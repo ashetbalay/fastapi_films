@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-connection = psycopg2.connect(user="maga", password="f")
+connection = psycopg2.connect(user="user", password="password")
 cursor = connection.cursor()
 
 connection.autocommit = True
@@ -18,7 +18,7 @@ cursor.close()
 connection.close()
 
 
-engine = create_engine("postgresql+psycopg2://maga:f@localhost/fastapi_films")
+engine = create_engine("postgresql+psycopg2://user:password@localhost/fastapi_films")
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
